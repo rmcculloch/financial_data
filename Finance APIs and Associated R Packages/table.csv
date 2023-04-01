@@ -1,0 +1,15 @@
+APIs, API Reference,API Notes,Relevant R Packages,Package Reference,Package Notes
+"yahoo (non-official, uses some scraping)",https://finance.yahoo.com/,Free,quantmod,https://github.com/joshuaulrich/quantmod,Extensive data
+,,,tidyquant,https://business-science.github.io/tidyquant/,
+,,,yahoofinancer,https://github.com/cran/yahoofinancer,
+Alpha Vantage,https://www.alphavantage.co/documentation/,Subscription service,quantmod,https://github.com/joshuaulrich/quantmod,Seems to be very limited with just quantmod.
+,,,tidyquant,https://business-science.github.io/tidyquant/,
+,,,alphavantager,https://github.com/business-science/alphavantager,
+FRED,,Free,quantmod,https://github.com/joshuaulrich/quantmod,Extensive data
+,,,tidyquant,https://business-science.github.io/tidyquant/,
+,,,fredr,https://github.com/sboysel/fredr,
+World Bank ,https://data.worldbank.org/,Free,priceR,https://github.com/stevecondylios/priceR,Extensive data
+,,,wbstats,https://github.com/gshs-ornl/wbstats,
+,,,WDI,https://github.com/vincentarelbundock/WDI,
+Nasdaq Data Link,https://data.nasdaq.com/tools/api,Subscription service,Quandl,https://github.com/quandl/quandl-r,Seems to be very limited without subscription.
+Coinmarketcap,https://coinmarketcap.com/api/,Subscription to the API is expensive.,crypto2,https://github.com/sstoeckl/crypto2,Uses web scraping to obtain data and is free.
