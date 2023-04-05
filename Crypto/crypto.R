@@ -1,7 +1,9 @@
 # Get and chart crypto data from coinmarketcap.com using the crypto2 package. 
 
 library(crypto2)
+library(stringr)
 library(dplyr)
+library(xts)
 library(highcharter)
 
 # A vector of the cryptocurrencies you're interested in.
