@@ -81,6 +81,9 @@ for (i in 1:length(chart_objects)) {
            file = paste(chart_objects[i], "-", Sys.Date(), ".html",  sep = ""))
 }
 
+# Creates the Charts folder.
+dir.create("./Equities/Charts")
+
 # Clears out any old charts in your Charts folder.
 system("rm ./Equities/Charts/*.html")
 
@@ -106,10 +109,10 @@ for (i in 1:length(equities)) {
 # Create a vector of data object names in environment 'c'.
 dividend_objects <- ls(c)
 
-# Displays the dividend data in a separate tab for each equity.
-for (i in 1:length(dividend_objects)) {
-View(get(dividend_objects[i], env = c), title = dividend_objects[i])
-}
+# # Displays the dividend data in a separate tab for each equity.
+# for (i in 1:length(dividend_objects)) {
+# View(get(dividend_objects[i], env = c), title = dividend_objects[i])
+# }
 
 ##### SPLITS #####
 
@@ -126,9 +129,9 @@ for (i in 1:length(equities)) {
 # Create a vector of data object names in environment 'c'.
 splits_objects <- ls(d)
 
-# Displays the dividend data in a separate tab for each equity.
-for (i in 1:length(splits_objects)) {
-  if (is.xts(get(splits_objects[i], env = d))) {
-    View(get(splits_objects[i], env = d), title = splits_objects[i])
-  }
-}
+# # Displays the dividend data in a separate tab for each equity.
+# for (i in 1:length(splits_objects)) {
+#   if (is.xts(get(splits_objects[i], env = d))) {
+#     View(get(splits_objects[i], env = d), title = splits_objects[i])
+#   }
+# }
