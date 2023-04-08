@@ -5,7 +5,7 @@ APIs, API Reference,API Notes,Relevant R Packages,Package Reference,Package Note
 Alpha Vantage,https://www.alphavantage.co/documentation/,Subscription service,quantmod,https://github.com/joshuaulrich/quantmod,Seems to be very limited with just quantmod.
 ,,,tidyquant,https://business-science.github.io/tidyquant/,
 ,,,alphavantager,https://github.com/business-science/alphavantager,
-FRED,,Free,quantmod,https://github.com/joshuaulrich/quantmod,Extensive data
+FRED,https://fred.stlouisfed.org/docs/api/fred/,Free,quantmod,https://github.com/joshuaulrich/quantmod,Extensive data
 ,,,tidyquant,https://business-science.github.io/tidyquant/,
 ,,,fredr,https://github.com/sboysel/fredr,
 World Bank ,https://data.worldbank.org/,Free,priceR,https://github.com/stevecondylios/priceR,Extensive data
