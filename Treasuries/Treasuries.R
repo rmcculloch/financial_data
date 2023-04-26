@@ -35,20 +35,28 @@ getSymbols(paste0(US_treasuries),  src = "FRED")
 # Can add and take off series as desired to compare the different treasuries.
 highchart(type = "stock") %>%
   hc_title(text = "US Treasury Yields Comparison") %>%
+  hc_add_series(DGS1MO, name = "1-Month") %>%
+  hc_add_series(DGS3MO, name = "3-Month") %>%
+  hc_add_series(DGS6MO, name = "6-Month") %>%
+  hc_add_series(DGS1, name = "1-Year") %>%
   hc_add_series(DGS2, name = "2-Year") %>%
+  hc_add_series(DGS3, name = "3-Year") %>%
+  hc_add_series(DGS5, name = "5-Year") %>%
+  hc_add_series(DGS7, name = "7-Year") %>%
   hc_add_series(DGS10, name = "10-Year") %>%
+  hc_add_series(DGS20, name = "20-Year") %>%
+  hc_add_series(DGS30, name = "30-Year") %>%
   hc_legend(enabled = TRUE)
 
 # AUSTRALIAN TREASURIES
-# 1 Month Treasury Note - FIRMMTN1D
-# 3 Month Treasury Note - FIRMMTN3D
-# 6 Month Treasury Note - FIRMMTN6D
-# Ausralian Government 2 Year Bond - FCMYGBAG2D
+# Australian Government 2 Year Bond - FCMYGBAG2D
 # Australian Government 3 Year Bond - FCMYGBAG3D
 # Australian Government 5 Year Bond - FCMYGBAG5D
 # Australian Government 10 Year Bond - FCMYGBAG10D
 
-# Shows RBA data related to the search term 'yields'.
+# Cash Rate Target - FIRMMCRTD
+
+# Shows RBA data related to a search term.
 rba <- browse_rba_series("yields")
 
 # Filters down the search results to include only those we are interested in.
@@ -59,6 +67,9 @@ rba_select <- rba %>% filter(cur_hist == "historical",
 
 # Stores the relevant series_ids in a vector.
 symbols <- rba_select$series_id
+
+# Add in cash target rate symbol to the symbols vector.
+symbols <- append(symbols, "FIRMMCRTD")
 
 # Grabs data on all those listed in the vector, which are stored as tibbles. 
 for (i in 1:length(symbols)) {
@@ -80,6 +91,9 @@ for (i in 1:length(symbols)) {
 # Can add and take off series as desired to compare the different treasuries.
 highchart(type = "stock") %>%
   hc_title(text = "Australian Treasury Yields Comparison") %>%
+  hc_add_series(FIRMMCRTD, name = "Target-Cash-Rate") %>%
   hc_add_series(FCMYGBAG2D, name = "2-Year") %>%
+  hc_add_series(FCMYGBAG3D, name = "3-Year") %>%
+  hc_add_series(FCMYGBAG5D, name = "5-Year") %>%
   hc_add_series(FCMYGBAG10D, name = "10-Year") %>%
   hc_legend(enabled = TRUE)
